@@ -5,6 +5,8 @@
  */
 package gwss.TER4.basicmath;
 
+import java.util.Scanner;
+
 /**
  *
  * @author adria
@@ -15,10 +17,13 @@ public class math {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        System.out.println(multiply("the numbers are 2 and 4"));
+        Scanner in = new Scanner(System.in);
+        System.out.print("Operation: ");
+        int op = in.nextInt();
+        System.out.println(getResult("the numbers are 4 and 2", op));
     }
     
-    public static double multiply(String sentence){
+    public static double getResult(String sentence, int op){
         int[] values = new int[2];
         try{
             int numCount = 0;
@@ -35,7 +40,20 @@ public class math {
         catch(ArrayIndexOutOfBoundsException e){
             System.exit(1);
         }
-        return values[0]*values[1];
+        switch (op){
+            case 1:
+                return values[0]*values[1];
+            case 2:
+                return values[0] / values[1];
+            case 3:
+                return values[0] + values[1];
+            case 4:
+                return values[0] - values[1];
+            case 5:
+                return Math.pow(values[0], values[1]);
+            default:
+                return 99.99;
+        }
     }
     
 }
