@@ -20,7 +20,7 @@ public class math {
         Scanner in = new Scanner(System.in);
         System.out.print("Operation: ");
         int op = in.nextInt();
-        System.out.println(getResult("the numbers are 4 and 2", op));
+        System.out.println(getResult(args[0], op));
     }
     
     public static double getResult(String sentence, int op){
