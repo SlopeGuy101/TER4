@@ -1,8 +1,8 @@
 # TER4
-Author: Adrian Joaquin
-Date: 11/2020
-
+Author: Adrian Joaquin |
+Date: 11/2020 |
 PROJECT ELROY
+
 This code was used in a project during grade 12 computer engineering.
 Project works on Raspberry Pi 4 B with a USB sound card and various breadboarded components to
 create a voice controlled way to perform tasks like basic mathematical calculations and information
