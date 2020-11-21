@@ -6,23 +6,23 @@ main(){
 	
 	case $cmnd in
 		"multiply" | "multiplied" | "multiplied by")
-			java math.java $cmnd 1
+			java math.java "1"
 			checkMath()
 		
 		"divided by" | "divide" | "over")
-			java math.java $cmnd 2
+			java math.java "2"
 			checkMath()
 		
 		"plus" | "add" | "added to")
-			java math.java $cmnd 3
+			java math.java "3"
 			checkMath()
 				
 		"minus" | "subtract" | "subtracted from")
-			java math.java $cmnd 4
+			java math.java "4"
 			checkMath()
 				
 		"to the")
-			java math.java $cmnd 5
+			java math.java "5"
 			checkMath()
 				
 	esac
