@@ -1,5 +1,5 @@
 # TER4
-Author: Adrian Joaquin |
+Creator: Adrian Joaquin |
 Date: 11/2020 |
 PROJECT ELROY
 
