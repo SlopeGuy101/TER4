@@ -24,12 +24,12 @@ public class math {
     public static void main(String[] args) throws IOException {
 		File trans = new File("Math Transfer.txt");								//Read from Python transfer file
         Scanner in = new Scanner(trans);
-		sentence = in.nextLine();
+		String sentence = in.nextLine();
 		int op = Integer.parseInt(args[0]);
         System.out.println(getResult(sentence, op));
     }
     
-    public static void getResult(String sentence, int op){
+    public static double getResult(String sentence, int op){
         int[] values = new int[2];
         try{
             int numCount = 0;
@@ -58,8 +58,9 @@ public class math {
             case 5:
                 return Math.pow(values[1], values[0]);
             default:
-                System.out.err("AN ERROR OCCURED");								//Return an error message incase of erroneous data
-        }
+                System.err.println("AN ERROR OCCURED");					//Return an error message incase of erroneous data
+				return 1;
+		}
     }
     
 }

@@ -1,9 +1,10 @@
 """command.py: module classifies user voice input into command types"""
 __author__ = "Adrian Joaquin"
 __date__ = "11/2020"
-__version__ = "0.5 (alpha)"
+__version__ = "0.5 (pre-alpha)"
 
 from handle import transcribe
+import sys
 
 #Any possible entry will be an object of entry class
 class entry:
@@ -30,4 +31,5 @@ command = entry(transcribe().lower())
 if command.is_math:
     with open("Math Transfer.txt", "w") as trans:
         trans.write(command.cont)
-        exit(command.get_op())
+        sys.stdout.write(command.get_op())
+        sys.exit(0)

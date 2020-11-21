@@ -1,9 +1,11 @@
 # ENSURE TO LAUNCH ALL SCRIPTS FROM SAME DIRECTORY
 main(){
+	#Script only moves forward once motion is sensed
 	python3 sense_motion.py
-	python3 command.py
-	cmnd = $?
+	#Command for execution comes from command.py
+	cmnd=`python3 command.py`
 	
+	#If commnand.py returned a math statement, evaluate accordingly
 	case $cmnd in
 		"multiply" | "multiplied" | "multiplied by")
 			java math.java "1"
@@ -27,9 +29,11 @@ main(){
 				
 	esac
 	
+	#main function recurses to acccomodate for future commands
 	main()
 	}
 	
+	#Checks if an error code was returned from math.java
 	checkMath(){
 		if [[ $? -eq 1 ]]; then
 				python3 handle.py "Please provide two numbers and one operation in your equation" 1

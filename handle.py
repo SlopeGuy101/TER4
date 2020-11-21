@@ -1,7 +1,7 @@
 """handle.py: This modulde handles the intake of speech and the output of spoken text"""
 __author__ = "Adrian Joaquin"
 __date__ = "11/2020"
-__version__ = "0.5 (alpha)"
+__version__ = "0.5 (pre-alpha)"
 
 
 import speech_recognition as sr
