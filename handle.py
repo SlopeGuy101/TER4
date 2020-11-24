@@ -38,4 +38,5 @@ def transcribe():
 if op == 1:
     speak(sentence)
 else:
-    exit(transcribe())
+    sys.stdout.write(transcribe())
+    sys.exit(0)

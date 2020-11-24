@@ -1,13 +1,5 @@
-multiply
-times
-multiplied by
-divided by
-divide
-over
-plus
-add
-added to
-minus
-subtract
-subtracted from
-to the
+*
+/
++
+-
+^
