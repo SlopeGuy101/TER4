@@ -30,7 +30,7 @@ def transcribe():
     #Listens from systems microphone, set to usb sound card for Raspberry Pi 4
     with mic as source:
         input = r.listen(source)
-        t_f_s = r.recognize_google(audio, language = 'en-us')
+        t_f_s = r.recognize_google(audio, language = 'en-US')
     return input
 
 
