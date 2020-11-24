@@ -7,7 +7,7 @@ main(){
 	
 	#If classify.py returned a math statement, evaluate accordingly
 	case $cmnd in
-		*)
+		\*)
 			java math.java "1"
 			checkMath()
 			;;
