@@ -3,35 +3,30 @@ main(){
 	#Script only moves forward once motion is sensed
 	python3 sense_motion.py
 	#Command for execution comes from command.py
-	cmnd=`python3 command.py`
+	cmnd=`python3 classify.py`
 	
-	#If commnand.py returned a math statement, evaluate accordingly
+	#If classify.py returned a math statement, evaluate accordingly
 	case $cmnd in
-		'*')
+		"*")
 			java math.java "1"
 			checkMath()
 			;;
-		
-		'/')
+		"/")
 			java math.java "2"
 			checkMath()
 			;;
-		
-		'+')
+		"+")
 			java math.java "3"
 			checkMath()
 			;;
-				
-		'-')
+		"-")
 			java math.java "4"
 			checkMath()
 			;;
-				
-		'^')
+		"^")
 			java math.java "5"
 			checkMath()
 			;;
-				
 	esac
 	
 	#main function recurses to acccomodate for future commands
