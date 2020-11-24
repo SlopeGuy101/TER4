@@ -18,23 +18,23 @@ main(){
 	case $cmnd in
 		"*")
 			java math.java "1"
-			checkMath()
+			checkMath
 			;;
 		"/")
 			java math.java "2"
-			checkMath()
+			checkMath
 			;;
 		"+")
 			java math.java "3"
-			checkMath()
+			checkMath
 			;;
 		"-")
 			java math.java "4"
-			checkMath()
+			checkMath
 			;;
 		"^")
 			java math.java "5"
-			checkMath()
+			checkMath
 			;;
 	esac
 	
