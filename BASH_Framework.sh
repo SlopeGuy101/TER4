@@ -3,8 +3,8 @@
 #Checks if an error code was returned from math.java
 checkMath(){
 	if [[ $? -eq 1 ]]; then
-			python3 handle.py "Please provide two numbers and one operation in your equation" 1
-			main()
+		python3 handle.py "Please provide two numbers and one operation in your equation" 1
+		main()
 	fi
 }
 
