@@ -39,5 +39,5 @@ main(){
 	esac
 	
 	#main function recurses to acccomodate for future commands
-	main()
+	main
 }
