@@ -10,22 +10,27 @@ main(){
 		'*')
 			java math.java "1"
 			checkMath()
+			;;
 		
 		'/')
 			java math.java "2"
 			checkMath()
+			;;
 		
 		'+')
 			java math.java "3"
 			checkMath()
+			;;
 				
 		'-')
 			java math.java "4"
 			checkMath()
+			;;
 				
 		'^')
 			java math.java "5"
 			checkMath()
+			;;
 				
 	esac
 	
