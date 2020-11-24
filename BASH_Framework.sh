@@ -5,6 +5,7 @@ checkMath(){
 	if [[ $? -eq 1 ]]; then
 			python3 handle.py "Please provide two numbers and one operation in your equation" 1
 			main()
+	fi
 }
 
 main(){
