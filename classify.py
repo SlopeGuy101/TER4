@@ -1,10 +1,20 @@
 """command.py: module classifies user voice input into command types"""
 __author__ = "Adrian Joaquin"
 __date__ = "11/2020"
-__version__ = "0.5 (pre-alpha)"
+__version__ = "0.5 (alpha)"
 
-from handle import transcribe
 import sys
+
+#Method transcribes spoken text into string input
+def transcribe():
+    r = sr.Recognizer()
+    mic = sr.Microphone(device_index = 0)
+
+    #Listens from systems microphone, set to usb sound card for Raspberry Pi 4
+    with mic as source:
+        audio = r.listen(source)
+        t_f_s = r.recognize_google(audio, language = 'en-US')
+    return t_f_s
 
 #Any possible entry will be an object of entry class
 class entry:
