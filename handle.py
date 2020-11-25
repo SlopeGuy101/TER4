@@ -24,14 +24,14 @@ def speak(txt):
 
 #Method transcribes spoken text into string input
 def transcribe():
-    r = sr.Recognizer
-    mic = sr.Microphone
+    r = sr.Recognizer()
+    mic = sr.Microphone(device_index = 0)
 
     #Listens from systems microphone, set to usb sound card for Raspberry Pi 4
     with mic as source:
-        input = r.listen(source)
+        audio = r.listen(source)
         t_f_s = r.recognize_google(audio, language = 'en-US')
-    return input
+    return t_f_s
 
 
 #Execute one of the features depending on input from the command line / BASH script

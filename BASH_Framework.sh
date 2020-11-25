@@ -10,7 +10,7 @@ checkMath(){
 
 main(){
 	#Script only moves forward once motion is sensed
-	python3 sense_motion.py
+	#python3 sense_motion.py
 	#Command for execution comes from command.py
 	cmnd=`python3 classify.py`
 	
@@ -41,3 +41,4 @@ main(){
 	#main function recurses to acccomodate for future commands
 	main
 }
+main
