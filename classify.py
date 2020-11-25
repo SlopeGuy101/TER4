@@ -4,6 +4,7 @@ __date__ = "11/2020"
 __version__ = "0.5 (alpha)"
 
 import sys
+import speech_recognition as sr
 
 #Method transcribes spoken text into string input
 def transcribe():
