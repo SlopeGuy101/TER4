@@ -5,7 +5,7 @@ __version__ = "0.5 (alpha)"
 
 import sys
 import speech_recognition as sr
-from math import solve
+from arithmetic import solve
 from sense_motion import sense
 
 
