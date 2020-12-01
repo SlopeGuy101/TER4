@@ -35,6 +35,7 @@ def main():
 
         #For math entries, check mathematical operation
         def get_op(self):
+            print("ran function")
             words = self.cont.split(" ")
             with open("Math_Dictionary.txt") as dict:
                 dictionary = dict.read().split("\n")
