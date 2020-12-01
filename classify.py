@@ -42,7 +42,7 @@ def main():
                 for i in range(len(words)):
                     for j in range(len(dictionary)):
                         if words[i] == dictionary[j]:
-                            print(words[i])
+                            #print(words[i])
                             return words[i]
 
     #A command is any instruction for the system to execute as a feature
@@ -51,8 +51,7 @@ def main():
     #If the command is to perform a math operation, log the operation and
     #pass corresponding command code to BASH
     if command.is_math:
-        with open("Math_Transfer.txt", "w") as trans:
-            sentence = trans.read()
+        print(solve(command.cont, command.op.split(" ")[1]))
     
     main()
 
