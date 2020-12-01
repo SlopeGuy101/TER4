@@ -13,28 +13,39 @@ main(){
 	#python3 sense_motion.py
 	#Command for execution comes from command.py
 	cmnd=`python3 classify.py`
+	echo "SCRIPT ENTERED"
+	#echo $cmnd
 	
 	#If classify.py returned a math statement, evaluate accordingly
 	case $cmnd in
-		"*")
+		[*])
+			echo "CASE WAS 1"
 			java math.java "1"
 			checkMath
 			;;
-		"/")
+		/)
+			echo "CASE WAS 2"
 			java math.java "2"
 			checkMath
 			;;
-		"+")
+		+)
+			echo "CASE WAS 3"
 			java math.java "3"
 			checkMath
 			;;
-		"-")
+		-)
+			echo "CASE WAS 4"
 			java math.java "4"
 			checkMath
 			;;
-		"^")
+		^)
+			echo "CASE WAS 5"
 			java math.java "5"
 			checkMath
+			;;
+		*)
+			echo "NO CASE WAS SATISFIED"
+			echo $cmnd
 			;;
 	esac
 	

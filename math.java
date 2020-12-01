@@ -22,6 +22,9 @@ public class math {
      * @param args the command line arguments
      */
     public static void main(String[] args) throws IOException {
+        while(true){
+            System.out.println("--------------------\n");
+        }
 		File trans = new File("Math Transfer.txt");								//Read from Python transfer file
         Scanner in = new Scanner(trans);
 		String sentence = in.nextLine();
