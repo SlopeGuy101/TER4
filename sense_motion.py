@@ -13,7 +13,8 @@ GPIO.setmode(GPIO.BOARD)
 GPIO.setup(3, GPIO.IN)
 
 #Only stops scanning for input if it is recieved (value changes to 1)
-while True:
-    motion = GPIO.input(3)
-    if motion == 1:
-        exit(1)
+def sense():
+    while True:
+        motion = GPIO.input(3)
+        if motion == 1:
+            exit(1)
