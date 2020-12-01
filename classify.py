@@ -35,23 +35,19 @@ def main():
 
         #For math entries, check mathematical operation
         def get_op(self):
-            print("ran function")
+            dictionary = {"*" : 0, "/" : 1, "+" : 2, "-" : 3, "^" : 4}
             words = self.cont.split(" ")
-            with open("Math_Dictionary.txt") as dict:
-                dictionary = dict.read().split("\n")
-                #print(words)
-                for i in range(len(words)):
-                    for j in range(len(dictionary)):
-                        if words[i] == (dictionary[j])[0]:
-                            self.is_math = True
-                            return words[i]
+            for i in range(len(words)):
+                if words[i] in dictionary:
+                    self.is_math = True
+                    return words[i]
 
     #A command is any instruction for the system to execute as a feature
     command = entry(transcribe().lower())
 
     #If the command is to perform a math operation, solve
     if command.is_math:
-        print(solve(command.cont, command.op.split(" ")[1]))
+        print(solve(command.cont, command.op))
     
     main()
 
