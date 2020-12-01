@@ -43,14 +43,13 @@ def main():
                 for i in range(len(words)):
                     for j in range(len(dictionary)):
                         if words[i] == (dictionary[j])[0]:
-                            #print(words[i])
+                            self.is_math = True
                             return words[i]
 
     #A command is any instruction for the system to execute as a feature
     command = entry(transcribe().lower())
 
-    #If the command is to perform a math operation, log the operation and
-    #pass corresponding command code to BASH
+    #If the command is to perform a math operation, solve
     if command.is_math:
         print(solve(command.cont, command.op.split(" ")[1]))
     

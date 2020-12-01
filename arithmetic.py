@@ -1,3 +1,5 @@
+import sys
+
 def solve(sentence, op):
     values = []
     try:
@@ -9,7 +11,8 @@ def solve(sentence, op):
                     num_count += 1
                     values[num_count-1] = int(commands[j])
     except:
-        return 1
+        sys.stdout.write("AN ERROR OCCURED")
+        sys.exit(0)
 
     def multiply():
         return (values[1]*1.0)*values[0]
@@ -23,5 +26,9 @@ def solve(sentence, op):
         return values[1]**values[0]
 
     outcomes = {0 : multiply(), 1 : divide(), 2 : add(), 3: subtract(), 4 : exp()}
-    return outcomes[op]
+    if op not in outcomes:
+        sys.stdout.write("AN ERROR OCCURED")
+        sys.exit(0)
+    else:
+        return outcomes[op]
 
