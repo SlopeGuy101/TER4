@@ -41,7 +41,7 @@ def main():
                 #print(words)
                 for i in range(len(words)):
                     for j in range(len(dictionary)):
-                        if words[i] == dictionary[j]:
+                        if words[i] == (dictionary[j])[0]:
                             #print(words[i])
                             return words[i]
 
