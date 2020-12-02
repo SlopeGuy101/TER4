@@ -11,7 +11,7 @@ def solve(sentence, op):
                     num_count += 1
                     values[num_count-1] = int(commands[j])
     except:
-        sys.stdout.write("AN ERROR OCCURED")
+        sys.stdout.write("AN ERROR OCCURED AT EVALUATION")
         sys.exit(0)
 
     def multiply():
