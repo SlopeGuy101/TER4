@@ -1,13 +1,19 @@
 import sys
+from handle import speak
 
 def solve(sentence, op):
+    values = []
     commands = sentence.split(" ")
     for i in range(len(commands)):
         try:
-            values.append(int(commands[i]))
-        except(TypeError):
-            print("EXPRESSION CANNOT BE EVALUATED")
-            exit(1)
+            try:
+                numbers = int(commands[i])
+                values.append(numbers)
+            except(ValueError):
+                i += 1
+        except(IndexError):
+            speak("expression could not be evaluated")
+            return "FAILED"
     
 
     def multiply():
