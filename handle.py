@@ -4,15 +4,9 @@ __date__ = "11/2020"
 __version__ = "0.5 (alpha)"
 
 
-import speech_recognition as sr
 from gtts import gTTS
-import sys
 import os
-from classify import transcribe
 
-#Command line arguments passed to module from BASH
-sentence = sys.argv[1]
-op = sys.argv[2]
 
 #Function uses google text to speech (gTTS) to speak text
 def speak(txt):
@@ -23,9 +17,3 @@ def speak(txt):
     os.system("mpg321 output.mp3")
 
 
-#Execute one of the features depending on input from the command line / BASH script
-if op == 1:
-    speak(sentence)
-else:
-    sys.stdout.write(transcribe())
-    sys.exit(0)

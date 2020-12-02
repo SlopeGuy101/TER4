@@ -7,11 +7,12 @@ import sys
 import speech_recognition as sr
 from arithmetic import solve
 from sense_motion import sense
+from handle import speak
 
 
 def main():
     #Only move into function when 
-    #sense()
+    sense()
     #Method transcribes spoken text into string input
     def transcribe():
         r = sr.Recognizer()
@@ -19,6 +20,7 @@ def main():
 
         #Listens from systems microphone, set to usb sound card for Raspberry Pi 4
         with mic as source:
+            r.adjust_for_ambient_noise(source)
             audio = r.listen(source)
             t_f_s = r.recognize_google(audio, language = 'en-US')
             print(t_f_s)
@@ -40,14 +42,14 @@ def main():
             for i in range(len(words)):
                 if words[i] in dictionary:
                     self.is_math = True
-                    return words[i]
+                    return dictionary[words[i]]
 
     #A command is any instruction for the system to execute as a feature
     command = entry(transcribe().lower())
 
     #If the command is to perform a math operation, solve
     if command.is_math:
-        print(solve(command.cont, command.op))
+        speak(str(solve(command.cont, command.op)))
     
     main()
 

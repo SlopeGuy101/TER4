@@ -14,7 +14,8 @@ GPIO.setup(3, GPIO.IN)
 
 #Only stops scanning for input if it is recieved (value changes to 1)
 def sense():
-    while True:
+    sensing = False
+    while not sensing:
         motion = GPIO.input(3)
         if motion == 1:
-            exit(1)
+            sensing = True
