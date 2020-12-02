@@ -1,14 +1,13 @@
 import sys
 
 def solve(sentence, op):
-    values = []
-    num_count = 0
     commands = sentence.split(" ")
-    for i in range(99):
-        for j in range(len(commands)):
-            if str(i) == commands[j]:
-                num_count += 1
-                values.append(int(commands[j]))
+    for i in range(len(commands)):
+        try:
+            values.append(int(commands[i]))
+        except(TypeError):
+            print("EXPRESSION CANNOT BE EVALUATED")
+            exit(1)
     
 
     def multiply():
