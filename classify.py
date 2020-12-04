@@ -43,12 +43,16 @@ def main():
 
         #For math entries, check mathematical operation
         def get_op(self):
-            dictionary = {"*" : 0, "/" : 1, "+" : 2, "-" : 3, "^" : 4}
-            words = self.cont.split(" ")
-            for i in range(len(words)):
-                if words[i] in dictionary:
-                    self.is_math = True
-                    return dictionary[words[i]]
+            try:
+                dictionary = {"*" : 0, "/" : 1, "+" : 2, "-" : 3, "^" : 4}
+                words = self.cont.split(" ")
+                for i in range(len(words)):
+                    if words[i] in dictionary:
+                        self.is_math = True
+                        return dictionary[words[i]]
+            except(AttributeError):
+                speak("Sorry, I didn't quite get that. Please try again.")
+                main()
 
     #A command is any instruction for the system to execute as a feature
     command = entry(transcribe())
