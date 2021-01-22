@@ -9,6 +9,7 @@ import speech_recognition as sr
 from arithmetic import solve
 from sense_motion import sense
 from handle import speak
+import get_temp
 
 
 def main():
@@ -60,6 +61,11 @@ def main():
     #If the command is to perform a math operation, solve
     if command.is_math:
         speak(str(solve(command.cont, command.op)))
+
+    temp_keywords = ("temperature", "hot", "cold", "warm", "degrees")
+    for i in command.cont.split(" "):
+        if i in temp_keywords:
+            get_temp()
 
     main()
 
