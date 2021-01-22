@@ -2,7 +2,7 @@
 based on voice input"""
 __author__ = "Adrian Joaquin"
 __date__ = "11/2020"
-__version__ = "0.5 (alpha)"
+__version__ = "1.1"
 
 import sys
 import speech_recognition as sr
@@ -13,8 +13,7 @@ import temp
 
 
 def main():
-    #Only move into function when motion is sensed
-    sense()
+
     #Method transcribes spoken text into string input
     def transcribe():
         try:
@@ -56,16 +55,24 @@ def main():
                 main()
 
     #A command is any instruction for the system to execute as a feature
-    command = entry(transcribe())
+    def process_command():
+        command = entry(transcribe())
 
-    #If the command is to perform a math operation, solve
-    if command.is_math:
-        speak(str(solve(command.cont, command.op)))
+        #If the command is to perform a math operation, solve
+        if command.is_math:
+            speak(str(solve(command.cont, command.op)))
 
-    temp_keywords = ("temperature", "hot", "cold", "warm", "degrees")
-    for i in command.cont.split(" "):
-        if i in temp_keywords:
-            temp.get_temp()
+        #Identifies commands requesting the temperature feature
+        temp_keywords = ("temperature", "hot", "cold", "warm", "degrees")
+        for i in command.cont.split(" "):
+            if i in temp_keywords:
+                temp.get_temp()
+
+    #Wait for wake keyword before taking command
+    active = transcribe()
+    if "wake" in active.split(" "):
+        speak("What can I do for you")
+        process_command()
 
     main()
 
