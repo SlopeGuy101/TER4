@@ -1,6 +1,6 @@
 import serial
 from handle import speak
 arduino = serial.Serial('/dev/ttyACM0', 9600, timeout = .1)
-data = arduino.readlin()
+data = arduino.readline()
 if data:
     speak(data)
