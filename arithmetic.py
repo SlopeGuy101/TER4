@@ -2,7 +2,7 @@
 expression"""
 __author__ = "Adrian Joaquin"
 __date__ = "12/2020"
-__version__ = "0.9 (beta)"
+__version__ = "1.0.1"
 
 import sys
 from handle import speak
@@ -11,9 +11,9 @@ from handle import speak
 def solve(sentence, op):
     values = []
     commands = sentence.split(" ")
-    if len(commands) > 3:
-        speak("Please provide an opertion of two numbers and one operand.")
-        return "Try again"
+    #if len(commands) > 3:
+     #   speak("Please provide an opertion of two numbers and one operand.")
+      #  return "Try again"
     for i in range(len(commands)):
         try:
             try:
