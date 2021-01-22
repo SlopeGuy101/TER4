@@ -4,4 +4,5 @@ arduino = serial.Serial('/dev/ttyACM0', 9600, timeout = .1)
 while True:
     data = arduino.readline()[:-2]
     if data:
-        speak(str(data))
+        temp = str(data[1:])
+        speak(("It is", temp "in here)
