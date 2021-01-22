@@ -8,4 +8,4 @@ def get_temp():
         if data:
             temp = str(data)[1:]
             speak(("It is" + temp + "degrees in here"))
-            exit(0)
+            return 0
