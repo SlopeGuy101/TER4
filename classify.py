@@ -7,7 +7,6 @@ __version__ = "1.1"
 import sys
 import speech_recognition as sr
 from arithmetic import solve
-from sense_motion import sense
 from handle import speak
 import temp
 
