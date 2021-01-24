@@ -1,7 +1,7 @@
 """classify.py: handles the classification and appropriate modeule executions
 based on voice input"""
 __author__ = "Adrian Joaquin"
-__date__ = "11/2020"
+__date__ = "01/2021"
 __version__ = "1.1"
 
 import sys
@@ -11,6 +11,7 @@ from sense_motion import sense
 from handle import speak
 import temp
 
+listening = False
 
 def main():
 
@@ -56,23 +57,30 @@ def main():
 
     #A command is any instruction for the system to execute as a feature
     def process_command():
-        command = entry(transcribe())
+        if listening:
+            command = entry(transcribe())
 
-        #If the command is to perform a math operation, solve
-        if command.is_math:
-            speak(str(solve(command.cont, command.op)))
+            #If the command is to perform a math operation, solve
+            if command.is_math:
+                speak(str(solve(command.cont, command.op)))
 
-        #Identifies commands requesting the temperature feature
-        temp_keywords = ("temperature", "hot", "cold", "warm", "degrees")
-        for i in command.cont.split(" "):
-            if i in temp_keywords:
-                temp.get_temp()
+            #Identifies commands requesting the temperature feature
+            temp_keywords = ("temperature", "hot", "cold", "warm", "degrees")
+            for i in command.cont.split(" "):
+                if i in temp_keywords:
+                    temp.get_temp()
 
     #Wait for wake keyword before taking command
     active = transcribe()
-    if "wake" in active.split(" "):
+    if "wake" in active.split(" ") and listening:
+        speak("I'm listening")
+        process_command()
+    elif "wake" in active.split(" "):
+        listening = True
         speak("What can I do for you")
         process_command()
+    if "thank" or "thanks" in active.split():
+        listening = False
 
     main()
 
