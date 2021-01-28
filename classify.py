@@ -61,7 +61,7 @@ def main():
 
             #If the command is to perform a math operation, solve
             if command.is_math:
-                speak(str(solve(command.cont, command.op)))
+                print(str(solve(command.cont, command.op)))
 
             #Identifies commands requesting the temperature feature
             temp_keywords = ("temperature", "hot", "cold", "warm", "degrees")
