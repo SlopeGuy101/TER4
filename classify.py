@@ -29,7 +29,7 @@ def main():
                 print(t_f_s)
             return t_f_s
         except:
-            speak("Sorry, I didn't quite get that. Please try again")
+            speak("Sorry, I didn't quite get that. Please try again transcribe")
             transcribe()
 
     #Any possible entry will be an object of entry class
@@ -51,7 +51,7 @@ def main():
                         self.is_math = True
                         return dictionary[words[i]]
             except(AttributeError):
-                speak("Sorry, I didn't quite get that. Please try again.")
+                speak("Sorry, I didn't quite get that. Please try again math.")
                 main()
 
     #A command is any instruction for the system to execute as a feature
