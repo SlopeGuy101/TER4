@@ -71,12 +71,12 @@ def main():
 
     #Wait for wake keyword before taking command
     active = transcribe()
-    if "wake" in active.split(" ") and listening:
-        speak("I'm listening")
-        process_command()
-    elif "wake" in active.split(" "):
+    if "wake" in active.split(" "):
         listening = True
         speak("What can I do for you")
+        process_command()
+    elif "wake" in active.split(" ") and listening:
+        speak("I'm listening")
         process_command()
     if "thank" or "thanks" in active.split():
         listening = False
